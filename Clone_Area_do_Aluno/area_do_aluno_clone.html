@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao CSS</title>
+    <script
+      src="https://kit.fontawesome.com/9e0806c8d8.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+
+      /* Declaração das variáveis */
+      :root {
+        --verde: hsl(130, 54%, 40%);
+        --cinza: #f1f1f1;
+        --cinza-hover: #bdbdbb;
+        --cinza-escuro: #525252;
+        --branco: #fff;
+        --azul-claro: hsl(201, 100%, 41%);
+        --azul: hsl(201, 100%, 31%);
+        --azul-escuro: hsl(201, 100%, 21%);
+      }
+
+      /* Estilização geral dos elementos */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Estilização do cabeçalho do site */
+      .header {
+        display: flex;
+        background-color: var(--verde);
+        color: var(--branco);
+        font-weight: bold;
+        padding: 10px;
+        gap: 5px;
+      }
+      .header a {
+        text-decoration: none;
+        color: var(--branco);
+        font-size: 15px;
+      }
+      .header span {
+        font-size: 18px;
+      }
+
+      /* Estilização do menu abaixo do cabeçalho do site */
+      .menu {
+        background-color: var(--cinza);
+        font-size: 13px;
+        padding: 8px;
+      }
+      .menu ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      .menu li {
+        list-style: none;
+      }
+      .menu a {
+        text-decoration: none;
+        color: var(--cinza-escuro);
+      }
+      .menu a:hover {
+        color: var(--verde);
+      }
+
+      /* Estilização geral do conteúdo */
+      .all-content {
+        margin: 15px;
+      }
+      .all-content h1 {
+        font-size: 40px;
+      }
+      .all-content h4 {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+
+      /* Estilização do conteúdo do site */
+      .container a {
+        text-decoration: none;
+        color: var(--cinza-escuro);
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+      .container ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+      }
+      .container li {
+        list-style: none;
+        background: var(--cinza);
+        padding: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        border-bottom: 3.5px solid var(--verde);
+      }
+      .container li:hover {
+        background-color: var(--cinza-hover);
+      }
+
+      /* Adição do ícone do ifpr nos links do container */
+      .ifpr-icon {
+        background: url("assets/icon-ifpr.png") center no-repeat;
+        padding: 10px;
+        background-size: contain;
+      }
+
+      /* Rodapé da página */
+      .footer {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer p {
+        margin-top: 5px;
+      }
+      .footer a {
+        margin: 7px;
+        margin-left: 0;
+        text-decoration: none;
+        color: var(--azul-claro);
+      }
+      .footer a:hover {
+        color: var(--azul);
+        text-decoration: underline;
+      }
+      .footer a:nth-child(9) {
+        margin-bottom: 50px;
+      }
+      .footer strong:hover {
+        color: var(--azul-escuro);
+        text-decoration: underline;
+      }
+
+      /* Redes sociais */
+      .social {
+        margin-top: 40px;
+      }
+      .social a {
+        padding: 5px;
+        margin-left: 2px;
+        font-size: 12px;
+        color: var(--branco);
+        text-decoration: none;
+        border-radius: 2.5px;
+      }
+      .social h6 {
+        font-size: 1rem;
+        color: #212529;
+      }
+      .social i {
+        margin-right: 3px;
+      }
+      .social .twitter {
+        background: #00aced;
+        box-shadow: 0px 3px 0px var(--azul-claro);
+      }
+      .social .facebook {
+        background: #3b5997;
+        box-shadow: 0px 3px 0px var(--azul-escuro);
+      }
+      .social .whatsapp {
+        background-color: #43d854;
+        box-shadow: 0px 3px 0px var(--verde);
+      }
+      .social .linkedin {
+        background: #0074a1;
+        box-shadow: 0px 3px 0px var(--azul);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="https://paranavai.ifpr.edu.br">
+        <i class="fa-solid fa-house-chimney"></i>
+      </a>
+      /
+      <span>Área do Aluno</span>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="https://paranavai.ifpr.edu.br/aluno/aluno-online/"
+            >Aluno Online</a
+          >
+        </li>
+        <li>
+          <a href="https://paranavai.ifpr.edu.br/aluno/ano-letivo-2021/"
+            >Ano Letivo 2021</a
+          >
+        </li>
+        <li>
+          <a href="https://paranavai.ifpr.edu.br/aluno/anos-letivos-anteriores/"
+            >Anos Letivos Anteriores</a
+          >
+        </li>
+        <li>
+          <a href="https://paranavai.ifpr.edu.br/aluno/moodle/">Moodle IFPR</a>
+        </li>
+        <li>
+          <a
+            href="https://paranavai.ifpr.edu.br/aluno/planos-de-trabalho-docente/"
+            >Planos de Trabalho Docente</a
+          >
+        </li>
+        <li>
+          <a href="https://paranavai.ifpr.edu.br/aluno/professores/"
+            >Professores</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="all-content">
+      <h1>Área do Aluno</h1>
+      <h4>Ano Letivo 2022</h4>
+
+      <div class="container">
+        <ul>
+          <li>
+            <a
+              href="https://paranavai.ifpr.edu.br/wp-content/uploads/2022/03/CALENDARIO_2022_final_aprovado.pdf"
+            >
+              <span class="ifpr-icon"></span
+              ><span>Calendário Acadêmico 2022</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://ifprparanavai.edupage.org/timetable">
+              <span class="ifpr-icon"></span><span>Grade de Horários</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://planif.ifpr.edu.br/index.planif">
+              <span class="ifpr-icon"></span
+              ><span>Horários de Atendimento</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://paranavai.ifpr.edu.br/aluno/planos-de-trabalho-docente/"
+            >
+              <span class="ifpr-icon"></span><span>Planos de Trabalho</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://paranavai.ifpr.edu.br/moodle/">
+              <span class="ifpr-icon"></span><span>Moodle IFPR</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://certificados.paranavai.ifpr.edu.br/verificar.jsf">
+              <span class="ifpr-icon"></span><span>Certificados</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://cronos.paranavai.ifpr.edu.br/">
+              <span class="ifpr-icon"></span><span>Cronos</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://paranavai.ifpr.edu.br/aluno-online/">
+              <span class="ifpr-icon"></span><span>Aluno Online</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://paranavai.ifpr.edu.br/professores/">
+              <span class="ifpr-icon"></span><span>Professores</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://paranavai.ifpr.edu.br/aluno/anos-letivos-anteriores/"
+            >
+              <span class="ifpr-icon"></span
+              ><span>Anos Letivos Anteriores</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://planif.ifpr.edu.br/index.planif">
+              <span class="ifpr-icon"></span><span>Plano de Ensino</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <p><strong>Aluno Online</strong></p>
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2022/03/Orientações-para-Estudantes-–-Ano-Letivo-2022-Anexo-1.pdf"
+          target="_blank"
+          >Orientações para Estudantes – Ano Letivo 2022</a
+        >
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2022/03/Ensalamento-Ano-Letivo-2022-Anexo-2.pdf"
+          target="_blank"
+          >Ensalamento Ano Letivo 2022</a
+        >
+
+        <a href="https://goo.gl/forms/ffIePlXiIlfgy7tm2"
+          >Solicitação de Carteirinha</a
+        >
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2015/12/IIP2.pdf"
+          >Instrução Normativa Atividades Complementares</a
+        >
+
+        <a
+          href="https://drive.google.com/drive/folders/1FSF8cUUSSUBJIdX15mbb8ezaOvR0dC2L?usp=sharing"
+          target="_blank"
+        >
+          <strong>Planos de Ensino/Dependência – Cursos Superiores</strong></a
+        >
+
+        <a
+          href="https://drive.google.com/drive/u/1/folders/1QxBV8s2gjNNAQuzzEzA3rJuA4Zti2ShV"
+          target="_blank"
+          ><strong>Planos de Ensino/Dependência – Cursos Técnicos</strong></a
+        >
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2016/11/MANUAL-DO-ALUNO-2016.pdf"
+          >Manual do Aluno</a
+        >
+
+        <a href="https://paranavai.ifpr.edu.br/vagas-de-estagio/"
+          >Vagas de Estágio</a
+        >
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2017/04/REGULAMENTO-GERAL-DA-BIBLIOTECA-DO-CAMPUS-PARANAVAÍ.pdf"
+          target="_blank"
+          >Regulamento da Biblioteca do Campus</a
+        >
+
+        <a
+          href="https://paranavai.ifpr.edu.br/wp-content/uploads/2022/04/Regulamento-Disciplinar-Discente.pdf"
+          >Regulamento Disciplinar do Corpo Discente do IFPR – Campus
+          Paranavaí</a
+        >
+      </div>
+
+      <div class="social">
+        <h6><i class="fa-solid fa-share-from-square"></i>Compartilhe</h6>
+
+        <a class="twitter" href="#" target="_blank"
+          ><i class="fa-brands fa-square-twitter"></i>Twitter</a
+        >
+        <a class="facebook" href="#" target="_blank"
+          ><i class="fa-brands fa-square-facebook"></i>Facebook</a
+        >
+        <a class="whatsapp" href="#" target="_blank"
+          ><i class="fa-brands fa-square-whatsapp"></i>WhatsApp</a
+        >
+        <a class="linkedin" href="#" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i>LinkedIn</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
