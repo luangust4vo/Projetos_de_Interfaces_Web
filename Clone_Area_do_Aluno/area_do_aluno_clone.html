@@ -11,11 +11,13 @@
       defer
     ></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
       /* Declaração das variáveis */
       :root {
+        --verde-claro: hsl(130, 54%, 50%);
         --verde: hsl(130, 54%, 40%);
+        --verde-escuro: hsl(130, 54%, 30%);
         --cinza: #f1f1f1;
         --cinza-hover: #bdbdbb;
         --cinza-escuro: #525252;
@@ -23,6 +25,7 @@
         --azul-claro: hsl(201, 100%, 41%);
         --azul: hsl(201, 100%, 31%);
         --azul-escuro: hsl(201, 100%, 21%);
+        --azul-dark: hsl(201, 100%, 11%);
       }
 
       /* Estilização geral dos elementos */
@@ -30,12 +33,13 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family: "Open Sans", sans-serif;
       }
 
       /* Estilização do cabeçalho do site */
       .header {
         display: flex;
+        cursor: pointer;
         background-color: var(--verde);
         color: var(--branco);
         font-weight: bold;
@@ -56,12 +60,13 @@
         background-color: var(--cinza);
         font-size: 13px;
         padding: 8px;
+        cursor: pointer;
+        /* border-radius: top-left top-right bottom-right bottom-left; */
+        border-radius: 0 0 0 10px;
       }
       .menu ul {
         display: flex;
         justify-content: space-around;
-      }
-      .menu li {
         list-style: none;
       }
       .menu a {
@@ -72,7 +77,7 @@
         color: var(--verde);
       }
 
-      /* Estilização geral do conteúdo */
+      /* Estilização geral do conteúdo do site */
       .all-content {
         margin: 15px;
       }
@@ -94,11 +99,11 @@
       }
       .container ul {
         display: grid;
+        list-style: none;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
       }
       .container li {
-        list-style: none;
         background: var(--cinza);
         padding: 10px;
         font-weight: bold;
@@ -120,8 +125,6 @@
       .footer {
         display: flex;
         flex-direction: column;
-      }
-      .footer p {
         margin-top: 5px;
       }
       .footer a {
@@ -148,11 +151,15 @@
       }
       .social a {
         padding: 5px;
-        margin-left: 2px;
+        /* margin: top left right bottom; */
+        margin: 0 2px 0 0;
         font-size: 12px;
         color: var(--branco);
         text-decoration: none;
         border-radius: 2.5px;
+      }
+      .social a:hover{
+        text-decoration: underline;
       }
       .social h6 {
         font-size: 1rem;
@@ -161,22 +168,35 @@
       .social i {
         margin-right: 3px;
       }
-      .social .twitter {
+      .twitter {
         background: #00aced;
         box-shadow: 0px 3px 0px var(--azul-claro);
       }
-      .social .facebook {
+      .twitter:hover{
+        background: var(--azul);
+      }
+      .facebook {
         background: #3b5997;
         box-shadow: 0px 3px 0px var(--azul-escuro);
       }
-      .social .whatsapp {
-        background-color: #43d854;
-        box-shadow: 0px 3px 0px var(--verde);
+      .facebook:hover{
+        background: var(--azul-dark);
       }
-      .social .linkedin {
+      .whatsapp {
+        background: #43d854;
+        box-shadow: 0px 3px 0px var(--verde-claro);
+      }
+      .whatsapp:hover{
+        background: var(--verde);
+      }
+      .linkedin {
         background: #0074a1;
         box-shadow: 0px 3px 0px var(--azul);
       }
+      .linkedin:hover{
+        background: var(--azul-escuro);
+      }
+      
     </style>
   </head>
 
