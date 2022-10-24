@@ -12,3 +12,7 @@
   padding: 10px;
   background-size: contain;
 }
+
+#barra-topo ul li {
+  list-style: none;
+}

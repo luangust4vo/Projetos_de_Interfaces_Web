@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +8,39 @@
     <link href="assets/ifpr_head_icon.gif" rel="shortcut icon" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script defer src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn-topo").click(function (e) {
+          e.preventDefault();
+          $("#botoes").hide();
+          $("#links").hide();
+          $("#redes-sociais").hide();
+
+          $("#topo").show();
+          $("#barra-topo").show();
+        });
+        $("#btn-aluno").click(function (e) {
+          e.preventDefault();
+          $("#botoes").show();
+          $("#links").hide();
+          $("#redes-sociais").hide();
+
+          $("#topo").hide();
+          $("#barra-topo").hide();
+        });
+        $("#btn-online").click(function (e) {
+          e.preventDefault();
+          $("#botoes").hide();
+          $("#links").hide();
+          $("#redes-sociais").hide();
+
+          $("#topo").hide();
+          $("#barra-topo").hide();
+        });
+      });
+    </script>
     <script
       src="https://kit.fontawesome.com/9e0806c8d8.js"
       crossorigin="anonymous"
@@ -19,53 +51,74 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3">Menu lateral</div>
+        <div class="col-lg-2">
+          <h3>Menu lateral</h3>
+          <button id="btn-topo" class="btn btn-success d-block mt-2">
+            Botão 1
+          </button>
+          <button id="btn-aluno" class="btn btn-success d-block mt-2">
+            Botão 2
+          </button>
+          <button id="btn-online" class="btn btn-success d-block mt-2">
+            Botão 3
+          </button>
+        </div>
         <div class="col-lg-9">
-          <div>
+          <div id="topo" class="bg-light">
             <a href="https://paranavai.ifpr.edu.br">
               <i class="fa-solid fa-house-chimney"></i>
             </a>
             / <span>Área do Aluno</span>
           </div>
 
-          <div>
-            <ul>
+          <div id="barra-topo" class="bg-success">
+            <ul class="d-flex flex-row justify-content-around">
               <li>
-                <a href="https://paranavai.ifpr.edu.br/aluno/aluno-online/"
+                <a
+                  class="text-light"
+                  href="https://paranavai.ifpr.edu.br/aluno/aluno-online/"
                   >Aluno Online</a
                 >
               </li>
               <li>
-                <a href="https://paranavai.ifpr.edu.br/aluno/ano-letivo-2021/"
+                <a
+                  class="text-light"
+                  href="https://paranavai.ifpr.edu.br/aluno/ano-letivo-2021/"
                   >Ano Letivo 2021</a
                 >
               </li>
               <li>
                 <a
+                  class="text-light"
                   href="https://paranavai.ifpr.edu.br/aluno/anos-letivos-anteriores/"
                   >Anos Letivos Anteriores</a
                 >
               </li>
               <li>
-                <a href="https://paranavai.ifpr.edu.br/aluno/moodle/"
+                <a
+                  class="text-light"
+                  href="https://paranavai.ifpr.edu.br/aluno/moodle/"
                   >Moodle IFPR</a
                 >
               </li>
               <li>
                 <a
+                  class="text-light"
                   href="https://paranavai.ifpr.edu.br/aluno/planos-de-trabalho-docente/"
                   >Planos de Trabalho Docente</a
                 >
               </li>
               <li>
-                <a href="https://paranavai.ifpr.edu.br/aluno/professores/"
+                <a
+                  class="text-light"
+                  href="https://paranavai.ifpr.edu.br/aluno/professores/"
                   >Professores</a
                 >
               </li>
             </ul>
           </div>
 
-          <div>
+          <div id="botoes">
             <h1>Área do Aluno</h1>
             <h4>Ano Letivo 2022</h4>
 
@@ -163,7 +216,7 @@
               </ul>
             </div>
 
-            <div>
+            <div id="links">
               <p><strong>Aluno Online</strong></p>
 
               <a
@@ -226,7 +279,7 @@
               >
             </div>
 
-            <div>
+            <div id="redes-sociais">
               <h6><i class="fa-solid fa-share-from-square"></i>Compartilhe</h6>
 
               <a class="twitter" href="#" target="_blank"
